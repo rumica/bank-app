@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bank App</title>
+</head>
+<body>
+    <nav>
+        <img src="world-logo.png" alt="Logo" class="logo" width="60px"/>
+        <p class="message">PLEASE LOG IN!</p>
+        <form class="login">
+          <input
+            type="text"
+            placeholder="USER"
+            class="login-input login-user"
+          />
+          <input
+            type="text"
+            placeholder="PIN"
+            maxlength="4"
+            class="login-input login-pin"
+          />
+          <button class="login-btn">&#129094;</button>
+        </form>
+      </nav>
+
+        <main>
+            <div class="process-field">
+
+                <!-- TRANSFER FIELD -->
+                <div class="process process-transfer">
+                    <h2>Transfer money</h2>
+                    <form class="form-process form-transfer">
+                        <label class="form-field">Transfer to</label>
+                        <input type="text" class="form-input form-input--to" />
+                        <label class="form-field">Amount</label>
+                        <input type="number" class="form-input form-input-amount" />
+                        <button class="form-btn form-btn-transfer">&rarr;</button> 
+                    </form>
+                </div>
+
+                <!-- LOAN FIELD -->
+                <div class="process process-loan">
+                    <h2>Request loan</h2>
+                    <form class="form-process form--loan">
+                        <label class="form-field form-field-loan">Amount</label>
+                        <input type="number" class="form-input form-input-loan-amount" />
+                        <button class="form-btn form-btn-loan">&rarr;</button>
+                    </form>
+                </div>
+
+                <!-- DELETE FIELD -->
+                <div class="process process-delete">
+                    <h2>Delete account</h2>
+                    <form class="form-process form-delete">
+                        <label>Confirm user</label>
+                        <input type="text" class="form-input form-input-user" />
+                        <label>Confirm PIN</label>
+                        <input
+                            type="password"
+                            maxlength="6"
+                            class="form-input form-input-pin"
+                        />
+                        <button class="form-btn form-btn-delete">&rarr;</button>
+                    </form>
+                </div>
+
+                <!-- AMOUNT -->
+                <div class="amount">
+                    <p class="amount-value">0€</p>
+                </div>
+            </div>
+      </main>
+    
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
