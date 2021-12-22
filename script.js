@@ -1,7 +1,7 @@
 //Data
 const account1 = {
     title: 'Rumeysa Var',
-    movements: [550, -300, -230, 2400, -870, -120, 300, 900, 2200],
+    movements: [550, -300, -230, 2400, -870, -120, 300, 900, -420],
     rate: 0.8, 
     pin: 1111,
   };
@@ -15,7 +15,7 @@ const account1 = {
   
   const account3 = {
     title: 'Jack Sparrow',
-    movements: [4400, 1250, -900, 30, 90, -250, 800, -2300],
+    movements: [4400, 1250, -900, 30, 90, -250, 800, -2300, 5320],
     rate: 0.9,
     pin: 3333,
   };
@@ -120,3 +120,41 @@ btnLogin.addEventListener('click', function (e){
     showScreen(presentAccount)
    } 
 })
+
+btnTransfer.addEventListener('click', function (e){
+    e.preventDefault()
+    const amount = Number(inputTransferAmount.value)
+    const receiverAcc = accounts.find(acc => acc.username === inputTransfer.value)
+    inputTransferAmount.value = inputTransfer.value = ''
+  
+    if(amount > 0 && receiverAcc && presentAccount.amount >= amount && receiverAcc?.username !== presentAccount.username){
+      presentAccount.movements.push(-amount)
+      receiverAcc.movements.push(amount)
+  
+      showScreen(presentAccount)
+    }
+  })
+
+  btnLoan.addEventListener('click', function (e){
+    e.preventDefault()
+    const amount = Number(inputLoanAmount.value)
+  
+    if(amount > 0 && presentAccount.movements.some(mov => mov >= amount * 0.1)){
+      presentAccount.movements.push(amount)
+      showScreen(presentAccount);
+    }
+    inputLoanAmount.value = '';
+  })
+  
+  btnClose.addEventListener('click', function (e){
+  
+    e.preventDefault()
+    const index = accounts.findIndex(acc => acc.username === presentAccount.username)
+  
+    if(inputCloseUser.value === presentAccount.username && Number(inputDeletePin.value) === presentAccount.pin) {
+      inputLoginUser.value = inputLoginPin.value = ''
+      accounts.splice(index, 1)
+      mainContainer.style.opacity = 0;
+      message.innerHTML = `See you, ${presentAccount.title.split(' ')[0]}`
+    }
+  })

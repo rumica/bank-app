@@ -51,6 +51,10 @@ nav {
     color: #9fd3c7;
     cursor: pointer;
 }
+.main-container {
+    opacity: 0;
+    transition: 1s;
+}
 
 main .process-field {
     margin-top: 10px;
