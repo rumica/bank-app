@@ -9,6 +9,7 @@
 
 body {
     background-color: #f8f8f8;
+    overflow-y: hidden;
 }
 
 nav {
@@ -103,7 +104,7 @@ main .process-field {
 
 .process-loan {
     background: rgb(86,169,184);
-    background: linear-gradient(90deg, rgba(86,169,184,1) 0%, rgba(46,48,157,1) 99%);
+    background: linear-gradient(90deg, rgba(86,169,184,1) 0%, rgb(62, 86, 151) 99%);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
@@ -126,6 +127,7 @@ main .process-field {
 .field {
     display: flex;
     margin-top: 15px;
+    height: 100vh;
 }
 
 .movements {
@@ -134,7 +136,8 @@ main .process-field {
     background-color: #ffff;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow: scroll;
+    height: 55%;
     width: 72%;
 }
 
@@ -174,6 +177,7 @@ main .process-field {
 
 .summary {
     width: 28%;
+    height: 390px;
     padding-left: 30px;
     display: flex;
     flex-direction: column;

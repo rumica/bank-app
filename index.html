@@ -27,7 +27,7 @@
         </form>
       </nav>
 
-        <main>
+        <main class="main-container">
             <div class="process-field">
 
                 <!-- TRANSFER FIELD -->
@@ -35,7 +35,7 @@
                     <h2>Transfer money</h2>
                     <form class="form-process form-transfer">
                         <label class="form-field">Transfer to</label>
-                        <input type="text" class="form-input form-input--to" />
+                        <input type="text" class="form-input form-input-to" />
                         <label class="form-field">Amount</label>
                         <input type="number" class="form-input form-input-amount" />
                         <button class="form-btn form-btn-transfer">&rarr;</button> 
@@ -47,7 +47,7 @@
                     <h2>Request loan</h2>
                     <form class="form-process form--loan">
                         <label class="form-field form-field-loan">Amount</label>
-                        <input type="number" class="form-input form-input-loan-amount" />
+                        <input type="number" class="form-input form-input-loan" />
                         <button class="form-btn form-btn-loan">&rarr;</button>
                     </form>
                 </div>
@@ -57,12 +57,12 @@
                     <h2>Delete account</h2>
                     <form class="form-process form-delete">
                         <label>Confirm user</label>
-                        <input type="text" class="form-input form-input-user" />
+                        <input type="text" class="form-input form-input-delete-user" />
                         <label>Confirm PIN</label>
                         <input
                             type="password"
                             maxlength="6"
-                            class="form-input form-input-pin"
+                            class="form-input form-input-delete-pin"
                         />
                         <button class="form-btn form-btn-delete">&rarr;</button>
                     </form>
